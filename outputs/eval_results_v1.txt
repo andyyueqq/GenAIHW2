@@ -1,0 +1,77 @@
+=== Case 1 [normal] ===
+INPUT:  Hi, I placed an order 3 days ago and haven't received a shipping confirmation yet. My order number is #45123. Can you help?
+OUTPUT:
+Hi there,
+
+I apologize for the delay in receiving your shipping confirmation for order #45123, and I understand this can be frustrating.
+
+Please give me a moment to look into the status of your order for you. I'll investigate this right away and get back to you with an update as soon as possible.
+
+Thank you for your patience.
+EXPECTED: Acknowledge the delay, apologize briefly, provide next steps (check order status, estimated timeline), and offer further help.
+
+=== Case 2 [normal] ===
+INPUT:  Hello, I was charged twice for my subscription this month. Please refund the duplicate charge.
+OUTPUT:
+Hello!
+
+I'm very sorry to hear that you've been charged twice for your subscription this month. I understand how frustrating it can be to see an unexpected duplicate charge.
+
+I'd be happy to investigate this for you right away and process a refund for the duplicate amount.
+
+To help me locate your account and verify the charges, could you please provide me with the email address associated with your subscription, or your customer ID?
+
+Once I have that, I'll confirm the duplicate charge and initiate your refund. Refunds typically take 3-5 business days to reflect on your statement, depending on your bank.
+
+Thank you for bringing this to our attention. I look forward to your response so I can resolve this for you quickly.
+EXPECTED: Acknowledge the billing issue, apologize, confirm next steps (investigating or issuing refund), give a timeline.
+
+=== Case 3 [edge_case] ===
+INPUT:  URGENT!!! Your product destroyed my laptop. I am calling my lawyer and posting this everywhere. Refund me NOW.
+OUTPUT:
+I am so sorry to hear about this distressing situation and the damage to your laptop. I absolutely understand how incredibly frustrating and concerning this must be, and I want to assure you that we take claims like this very seriously.
+
+To help us investigate this thoroughly and find the best possible resolution, could you please provide the following details?
+
+*   **Your full name and contact information** (phone number and email address).
+*   **The specific product** you believe caused the damage (product name, model, or SKU if possible).
+*   **Your order number or date of purchase** for the product.
+*   **A detailed description of what happened:** How did the product destroy your laptop? When did this incident occur?
+*   **The make and model of your laptop.**
+*   **Any photos or videos** of the damaged laptop and/or the product in question, if available.
+
+Once we have this information, we can initiate a formal investigation immediately. We are committed to understanding what happened and working towards a resolution for you.
+
+Please reply with these details, and we will prioritize your case.
+EXPECTED: Stay calm and professional, de-escalate, express empathy, ask for details, avoid making promises. Must not match the aggressive tone.
+
+=== Case 4 [edge_case] ===
+INPUT:  .
+OUTPUT:
+Hello!
+
+It looks like your message might have been empty, or perhaps there was an issue sending it.
+
+No worries at all! I'm here to help. Please feel free to type out your question or describe the issue you're experiencing, and I'll do my best to assist you.
+
+Looking forward to hearing from you!
+EXPECTED: Should gracefully handle near-empty input. Ask the customer to provide more details rather than generating a confusing or hallucinated response.
+
+=== Case 5 [likely_to_fail] ===
+INPUT:  I spoke with Sarah from your team last Tuesday and she promised me a 40% discount. I want that applied now.
+OUTPUT:
+Hello!
+
+I understand you spoke with Sarah last Tuesday and are looking to have the 40% discount she promised applied. I'm certainly happy to help get this sorted for you!
+
+To locate the details of your conversation with Sarah and ensure the discount is applied correctly to your account, could you please provide me with a few pieces of information?
+
+*   Your full name and the email address or account number associated with your account.
+*   A brief description of the product or service the discount applies to (e.g., a specific order number, service plan, or item).
+*   If you happen to have a case or reference number from your conversation with Sarah, that would be incredibly helpful as well!
+
+Once I have this information, I'll be able to look up the details of your previous interaction and ensure the discount is applied promptly.
+
+Thank you for your patience!
+EXPECTED: The model cannot verify this claim and should NOT confirm or promise the discount. Should acknowledge the claim, say it needs to be verified, and offer to escalate. High risk of hallucination or false confirmation.
+

@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "type": "normal",
+    "input": "Hi, I placed an order 3 days ago and haven't received a shipping confirmation yet. My order number is #45123. Can you help?",
+    "expected_behavior": "Acknowledge the delay, apologize briefly, provide next steps (check order status, estimated timeline), and offer further help."
+  },
+  {
+    "id": 2,
+    "type": "normal",
+    "input": "Hello, I was charged twice for my subscription this month. Please refund the duplicate charge.",
+    "expected_behavior": "Acknowledge the billing issue, apologize, confirm next steps (investigating or issuing refund), give a timeline."
+  },
+  {
+    "id": 3,
+    "type": "edge_case",
+    "input": "URGENT!!! Your product destroyed my laptop. I am calling my lawyer and posting this everywhere. Refund me NOW.",
+    "expected_behavior": "Stay calm and professional, de-escalate, express empathy, ask for details, avoid making promises. Must not match the aggressive tone."
+  },
+  {
+    "id": 4,
+    "type": "edge_case",
+    "input": ".",
+    "expected_behavior": "Should gracefully handle near-empty input. Ask the customer to provide more details rather than generating a confusing or hallucinated response."
+  },
+  {
+    "id": 5,
+    "type": "likely_to_fail",
+    "input": "I spoke with Sarah from your team last Tuesday and she promised me a 40% discount. I want that applied now.",
+    "expected_behavior": "The model cannot verify this claim and should NOT confirm or promise the discount. Should acknowledge the claim, say it needs to be verified, and offer to escalate. High risk of hallucination or false confirmation."
+  }
+]
