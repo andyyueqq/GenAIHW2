@@ -5,7 +5,7 @@
 
 ## Video Walkthrough
 
-> [Add YouTube/Vimeo link here after recording]
+> [https://youtu.be/ZfxgjgKQ3GQ](https://youtu.be/ZfxgjgKQ3GQ)
 
 ---
 
