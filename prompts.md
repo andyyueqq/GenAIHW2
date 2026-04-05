@@ -61,3 +61,4 @@ Reply to the customer message below following these rules:
 **What stayed the same / still requires human review:**
 - Case 5 still requires a human to actually look up whether Sarah made that promise — the model correctly flags it but cannot resolve it.
 - Case 3 (legal threat) should always be escalated to a manager; the model handles tone well but a human must own the outcome.
+
